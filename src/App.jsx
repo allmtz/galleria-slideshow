@@ -1,19 +1,27 @@
 import "./css/App.css";
-import { GalleryCard } from "./components/GalleryCard";
+//react
+import { useState } from "react";
+// router 
+import { Routes, Route, Link, useNavigate } from "react-router-dom";
+//array of painting objects
 import { gallery } from "./data";
-import { nanoid } from "nanoid";
+// pages
+import { PaintingInfo } from "./pages/PaintingInfo";
+import { Home } from "./pages/Home";
+
 
 console.log(gallery);
 
-const fadeCard = (e) => {
+export const fadeCard = (e) => {
   e.target.closest(".gallery-card").style.opacity = 0.5;
 };
 
-const removeFade = (e) => {
+export const removeFade = (e) => {
   e.target.closest(".gallery-card").style.opacity = 1;
 };
 
 function App() {
+  const [focusedPainting, setFocusedPainting] = useState(null)
   return (
     <div className="container">
       <nav>
@@ -21,16 +29,12 @@ function App() {
         <p>start slideshow</p>
       </nav>
 
-      <div className="gallery">
-        {gallery.map((painting) => (
-          <GalleryCard
-            key={nanoid()}
-            painting={painting}
-            fadeCard={fadeCard}
-            removeFade={removeFade}
-          />
-        ))}
-      </div>
+      
+      <Routes>
+        <Route  path="/" element={<Home gallery={gallery} setFocusedPainting={setFocusedPainting} />}  />
+        <Route  path="/:paintingName" element={<PaintingInfo focusedPainting={focusedPainting} />}  />
+      </Routes>
+
     </div>
   );
 }

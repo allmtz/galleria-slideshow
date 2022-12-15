@@ -1,9 +1,15 @@
-export const GalleryCard = ({ painting, fadeCard, removeFade }) => {
+import { Link } from "react-router-dom";
+import { fadeCard } from "../App"
+import { removeFade } from "../App"
+
+export const GalleryCard = ({ painting, setFocusedPainting }) => {
   return (
-    <div
+    <Link
+      to={`/${painting.name}`}
       className="gallery-card"
       onMouseEnter={fadeCard}
       onMouseLeave={removeFade}
+      onClick={ () => setFocusedPainting(painting) }
     >
       <div className="gradient"></div>
       <img src={"src/" + painting.images.thumbnail} alt={painting.name} />
@@ -11,6 +17,6 @@ export const GalleryCard = ({ painting, fadeCard, removeFade }) => {
         <h2>{painting.name}</h2>
         <p>{painting.artist.name}</p>
       </div>
-    </div>
+    </Link>
   );
 };
