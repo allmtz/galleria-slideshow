@@ -1,0 +1,66 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Libre Baskerville", serif;
+  min-width: 320px;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 1rem;
+}
+nav h1 {
+  font-size: 1.6rem;
+}
+nav p {
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  letter-spacing: 2px;
+}
+
+.gallery {
+  padding: 2rem 1rem;
+  border-top: 1px solid #e5e5e5;
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.gallery-card {
+  position: relative;
+  cursor: pointer;
+  transition-duration: 0.5s;
+}
+.gallery-card .gradient {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 50%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 128, 0));
+}
+.gallery-card .painting-info {
+  max-width: 240px;
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem;
+}
+.gallery-card .painting-info h2 {
+  color: white;
+}
+.gallery-card .painting-info p {
+  color: #e5e5e5;
+}
+
+/*# sourceMappingURL=app.css.map */

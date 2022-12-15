@@ -1,4 +1,4 @@
-[
+export const gallery =[
   {
     "name": "Starry Night",
     "year": 1889,
