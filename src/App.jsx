@@ -8,6 +8,8 @@ import { gallery } from "./data";
 // pages
 import { PaintingInfo } from "./pages/PaintingInfo";
 import { Home } from "./pages/Home";
+//components
+import { Nav } from "./components/Nav";
 
 
 console.log(gallery);
@@ -24,11 +26,7 @@ function App() {
   const [focusedPainting, setFocusedPainting] = useState(null)
   return (
     <div className="container">
-      <nav>
-        <h1>galleria.</h1>
-        <p>start slideshow</p>
-      </nav>
-
+     <Nav />
       
       <Routes>
         <Route  path="/" element={<Home gallery={gallery} setFocusedPainting={setFocusedPainting} />}  />
