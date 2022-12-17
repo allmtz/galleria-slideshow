@@ -26,6 +26,11 @@ img{
     height: 100%;
 }
 
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
 nav{
     display: flex;
     justify-content: space-around;
