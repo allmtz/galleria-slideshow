@@ -30,7 +30,7 @@ function App() {
       
       <Routes>
         <Route  path="/" element={<Home gallery={gallery} setFocusedPainting={setFocusedPainting} />}  />
-        <Route  path="/:paintingName" element={<PaintingInfo focusedPainting={focusedPainting} />}  />
+        <Route  path="/:paintingName" element={<PaintingInfo focusedPainting={focusedPainting} setFocusedPainting={setFocusedPainting} gallery={gallery} />}  />
       </Routes>
 
     </div>
