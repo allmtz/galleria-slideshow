@@ -66,7 +66,80 @@ nav p {
   color: white;
 }
 .gallery-card .painting-info p {
+  color: #f3f3f3;
+}
+
+.painting-page {
+  padding: 1rem;
+}
+.painting-page .img-container {
+  position: relative;
+}
+.painting-page .img-container .img-info {
+  position: absolute;
+  bottom: -2.5rem;
+  padding: 1rem 4rem 1rem 1rem;
+  max-width: 250px;
+  background-color: white;
+}
+.painting-page .img-container .img-info p {
+  color: #7D7D7D;
+}
+.painting-page .painting-information {
+  margin-top: 3rem;
+  position: relative;
+}
+.painting-page .painting-information img {
+  width: 5rem;
+}
+.painting-page .painting-information .year {
+  font-size: 5.5rem;
   color: #e5e5e5;
+  font-weight: 500;
+  opacity: 0.5;
+  position: absolute;
+  z-index: -1;
+  right: 0;
+  top: 3rem;
+}
+.painting-page .painting-information .description {
+  margin-top: 2.3rem;
+  color: #7D7D7D;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 28px;
+}
+.painting-page a {
+  text-decoration: underline;
+  text-transform: uppercase;
+  color: #7D7D7D;
+  display: block;
+  margin-top: 2rem;
+  margin-bottom: 5rem;
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+.painting-page progress {
+  width: 100%;
+}
+.painting-page .slideshow-controls,
+.painting-page .arrows {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.painting-page .arrows img {
+  scale: 0.5;
+}
+.painting-page .slideshow-controls p {
+  font-size: 0.8rem;
+  margin-top: 10px;
+}
+.painting-page .slideshow-controls h4 {
+  margin-top: 10px;
+}
+.painting-page .arrows {
+  width: 70px;
 }
 
 /*# sourceMappingURL=app.css.map */
