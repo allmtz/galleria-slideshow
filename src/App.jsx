@@ -22,6 +22,14 @@ export const removeFade = (e) => {
   e.target.closest(".gallery-card").style.opacity = 1;
 };
 
+export const closeFullScreen = (e) => {
+  e.target.closest(".full-screen").style.scale = 0
+}
+
+export const openFullScreen = (e) => {
+  e.target.closest(".painting-page").previousElementSibling.style.scale = 1
+}
+
 function App() {
   const [focusedPainting, setFocusedPainting] = useState(null)
   return (

@@ -15,11 +15,14 @@ body{
     font-family: 'Libre Baskerville', serif;
     min-width: 320px;
 
-    // border: 2px solid green;
 }
 
 .container{
-    // background-color: orange;
+    // position: relative;
+    // height: 100%;
+    // overflow: hidden;
+    // border: 1px solid red;
+
 }
 
 img{
@@ -36,9 +39,10 @@ nav{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin-top: 1rem;
+    padding-top: 1rem;
     padding-bottom: 1rem;
     border-bottom: 1px solid $artist-name-color;
+    z-index: -1;
 
     h1{
         font-size: 1.6rem;
@@ -92,6 +96,36 @@ nav{
     }
 }
 
+.full-screen{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.877);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    scale: 0 ;
+    
+    p{
+        color: white;
+        width: min-content;
+        margin-left: auto;
+
+        //mixin ? 
+        text-transform: uppercase;
+        font-size: 12px;
+        letter-spacing: 2.5px;
+        margin-bottom: 20px;
+
+        cursor: pointer;
+    }
+
+}
+
+
 .painting-page {
     padding: 1rem;
 
@@ -108,6 +142,28 @@ nav{
             p{
                 color: $dark-gray;
             }
+        }
+    }
+
+    .view-image{
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 1rem;
+        padding: .8rem 1rem;
+        border: none;
+        width: 160px;
+        background-color: rgba(0, 0, 0, 0.726);
+        color: white;
+        text-transform: uppercase;
+        font-family: inherit;
+        font-size: 10px;
+        letter-spacing: 2px;
+        cursor: pointer;
+
+        img{
+            width: 12px;
         }
     }
 
@@ -181,8 +237,3 @@ nav{
     }
 // painting-page end 
 }
-
-
-
-
-

@@ -23,9 +23,10 @@ nav {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  margin-top: 1rem;
+  padding-top: 1rem;
   padding-bottom: 1rem;
   border-bottom: 1px solid #e5e5e5;
+  z-index: -1;
 }
 nav h1 {
   font-size: 1.6rem;
@@ -69,6 +70,30 @@ nav p {
   color: #f3f3f3;
 }
 
+.full-screen {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.877);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  scale: 0;
+}
+.full-screen p {
+  color: white;
+  width: min-content;
+  margin-left: auto;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 2.5px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
 .painting-page {
   padding: 1rem;
 }
@@ -84,6 +109,26 @@ nav p {
 }
 .painting-page .img-container .img-info p {
   color: #7D7D7D;
+}
+.painting-page .view-image {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 1rem;
+  padding: 0.8rem 1rem;
+  border: none;
+  width: 160px;
+  background-color: rgba(0, 0, 0, 0.726);
+  color: white;
+  text-transform: uppercase;
+  font-family: inherit;
+  font-size: 10px;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+.painting-page .view-image img {
+  width: 12px;
 }
 .painting-page .painting-information {
   margin-top: 3rem;
