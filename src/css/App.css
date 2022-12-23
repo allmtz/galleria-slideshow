@@ -35,6 +35,7 @@ nav p {
   text-transform: uppercase;
   font-size: 0.7rem;
   letter-spacing: 2px;
+  cursor: pointer;
 }
 
 .gallery {
