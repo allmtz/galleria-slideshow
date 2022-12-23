@@ -2,7 +2,7 @@ import "./css/App.css";
 //react
 import { useState } from "react";
 // router 
-import { Routes, Route, Link, useNavigate } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 //array of painting objects
 import { gallery } from "./data";
 // pages
@@ -32,47 +32,10 @@ export const openFullScreen = (e) => {
 
 function App() {
   const [focusedPainting, setFocusedPainting] = useState(null)
-  const navigate = useNavigate()
-
-  function startSlideshow(location){
-    let i = 0
-
-    if(location.pathname === "/"){
-      console.log("you are in root, start from the top")
-      navigate(`/${gallery[1].name}`)
-
-      let intervalID = setInterval( ()=>{
-        i++
-        if(i< gallery.length){
-          navigate(`/${gallery[i].name}`)
-          return
-        }
-        console.log("cleared")
-        clearInterval(intervalID)
-      },1000 )
-      return
-    }
-
-    console.log("you are focused, start from focus")
-
-    let index = gallery.indexOf(focusedPainting)
-
-    let intervalID = setInterval( ()=>{
-      console.log("running")
-      index++
-      if (index < gallery.length) {
-        navigate(`/${gallery[index].name}`)
-      }
-      else{
-        console.log("cleared")
-        clearInterval(intervalID)
-      }
-    }, 1000 )
-  }
 
   return (
     <div className="container">
-     <Nav startSlideshow={startSlideshow} />
+     <Nav focusedPainting={focusedPainting}  />
       
       <Routes>
         <Route  path="/" element={<Home gallery={gallery} setFocusedPainting={setFocusedPainting} />}  />
