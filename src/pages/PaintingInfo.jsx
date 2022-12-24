@@ -58,7 +58,7 @@ export const PaintingInfo = ( {setFocusedPainting,focusedPainting, gallery, play
             </section>
 
         <a href={focusedPainting.source} target="_blank" rel="noreferrer" >go to source</a>
-        <progress value="1" max="10"></progress>
+        <progress value={gallery.indexOf(focusedPainting) + 1 } max={gallery.length}></progress>
 
         <section className="slideshow-controls">
             <div>
