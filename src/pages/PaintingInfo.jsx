@@ -1,15 +1,27 @@
 import { useEffect } from "react"
-import { useParams } from "react-router-dom"
+import { useParams, useNavigate } from "react-router-dom"
 import { closeFullScreen, openFullScreen } from "../App"
 
-export const PaintingInfo = ( {setFocusedPainting,focusedPainting, gallery, displayImage} ) => {
+export const PaintingInfo = ( {setFocusedPainting,focusedPainting, gallery, play } ) => {
     let {paintingName} = useParams()
+    const navigate = useNavigate()
 
     useEffect(() => {
         let paintingFromUrl = gallery.find(painting => painting.name === paintingName)
         setFocusedPainting(paintingFromUrl)
     },[paintingName])
 
+    function manuallyChangeSlide(direction){
+        let currentIndex = gallery.indexOf(gallery.find( painting => painting.name === focusedPainting.name) )
+
+        //disable skip buttons when the slideshow is playing and when on the first or last painting
+        if(play) return
+        if( direction==="back" && currentIndex === 0 || direction=="forward" && currentIndex === gallery.length - 1){
+            return
+        }
+
+        direction === "forward" ?  navigate(`/${gallery[currentIndex + 1].name}`) : navigate(`/${gallery[currentIndex - 1].name}`)
+    }
     return(
         <> 
         { focusedPainting !== null ? 
@@ -54,8 +66,8 @@ export const PaintingInfo = ( {setFocusedPainting,focusedPainting, gallery, disp
                 <p>{focusedPainting.artist.name}</p>
             </div>
             <div className="arrows" >
-                <img src={"src/assets/shared/icon-back-button.svg"} alt="back arrow" />
-                <img src={"src/assets/shared/icon-next-button.svg"} alt="forward arrow" />
+                <img src={"src/assets/shared/icon-back-button.svg"} alt="back arrow" onClick={ () => manuallyChangeSlide("back")}  />
+                <img src={"src/assets/shared/icon-next-button.svg"} alt="forward arrow" onClick={() => manuallyChangeSlide("forward")}/>
             </div>
         </section>
     </div> 

@@ -1,14 +1,13 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { gallery } from "../data";
-import { useRef, useState } from "react";
+import { useRef } from "react";
 
 
-export const Nav = ( {focusedPainting}  ) => {
+export const Nav = ( {focusedPainting, play, setPlay}  ) => {
   const location = useLocation()
   const navigate = useNavigate()
 
   const intervalContainer = useRef(null)
-  const [play,setPlay] =  useState(false)
 
   function stopSlideshow(){
     setPlay(false)
