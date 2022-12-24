@@ -51,6 +51,11 @@ nav{
         font-size: .7rem;
         letter-spacing: 2px;
         cursor: pointer;
+        opacity: .6;
+
+        &:hover{
+            opacity: 1;
+        }
     }
 }
 
@@ -157,9 +162,13 @@ nav{
         color: white;
         text-transform: uppercase;
         font-family: inherit;
-        font-size: 10px;
+        font-size: 11px;
         letter-spacing: 2px;
         cursor: pointer;
+
+        &:hover{
+            background-color: rgba(126, 125, 125, 0.637);
+        }
 
         img{
             width: 12px;
@@ -192,20 +201,28 @@ nav{
             font-size: 14px;
             line-height: 28px;
         }
-    }
 
-    a{
-        text-decoration: underline;
-        text-transform: uppercase;
-        color: $dark-gray;
-        display: block;
-        margin-top: 2rem;
-        margin-bottom: 5rem;
-        font-size: 10px;
-        letter-spacing: 2px;
-    }
+        .link-container{
+            width: 500px;
+            margin: auto;
+            margin-top: 2rem;
+            margin-bottom: 5rem;
+        }
 
-    //come back to this
+        a{
+            text-decoration: underline;
+            text-transform: uppercase;
+            color: black;
+            font-size: 10px;
+            letter-spacing: 2px;
+            opacity: .6;
+             
+            &:hover{
+                opacity: 1;
+             }
+        }
+    }
+    
     progress{
         width: 100%;
     }
@@ -219,7 +236,12 @@ nav{
 
     .arrows img{
         scale: .5;
-          
+        cursor: pointer;
+        transition-duration: 0.5s;
+
+        &:hover{
+            opacity: .6;
+        }
     }
 
     .slideshow-controls p{
@@ -237,7 +259,15 @@ nav{
 // painting-page end 
 }
 
+.disabled{
+    opacity: .3;
+    pointer-events: none;
+}
+
 @media screen and (min-width:768px){
+    nav p{
+        font-size: 12px;
+    }
     .painting-page{
         .img-container{
             padding: .1rem;

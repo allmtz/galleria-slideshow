@@ -55,9 +55,11 @@ export const PaintingInfo = ( {setFocusedPainting,focusedPainting, gallery, play
                     className="artist-portrait" />
                 <p className="year">{focusedPainting.year}</p>
                 <p className="description">{focusedPainting.description}</p>
+                <div className="link-container">
+                 <a href={focusedPainting.source} target="_blank" rel="noreferrer" >go to source</a>
+                </div>
             </section>
 
-        <a href={focusedPainting.source} target="_blank" rel="noreferrer" >go to source</a>
         <progress value={gallery.indexOf(focusedPainting) + 1 } max={gallery.length}></progress>
 
         <section className="slideshow-controls">
@@ -66,8 +68,8 @@ export const PaintingInfo = ( {setFocusedPainting,focusedPainting, gallery, play
                 <p>{focusedPainting.artist.name}</p>
             </div>
             <div className="arrows" >
-                <img src={"src/assets/shared/icon-back-button.svg"} alt="back arrow" onClick={ () => manuallyChangeSlide("back")}  />
-                <img src={"src/assets/shared/icon-next-button.svg"} alt="forward arrow" onClick={() => manuallyChangeSlide("forward")}/>
+                <img className={play ? "disabled" : ""} src={"src/assets/shared/icon-back-button.svg"} alt="back arrow" onClick={ () => manuallyChangeSlide("back")}  />
+                <img className={play ? "disabled" : ""} src={"src/assets/shared/icon-next-button.svg"} alt="forward arrow" onClick={() => manuallyChangeSlide("forward")}/>
             </div>
         </section>
     </div> 

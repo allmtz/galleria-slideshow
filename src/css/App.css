@@ -36,6 +36,10 @@ nav p {
   font-size: 0.7rem;
   letter-spacing: 2px;
   cursor: pointer;
+  opacity: 0.6;
+}
+nav p:hover {
+  opacity: 1;
 }
 
 .gallery {
@@ -124,9 +128,12 @@ nav p {
   color: white;
   text-transform: uppercase;
   font-family: inherit;
-  font-size: 10px;
+  font-size: 11px;
   letter-spacing: 2px;
   cursor: pointer;
+}
+.painting-page .view-image:hover {
+  background-color: rgba(126, 125, 125, 0.637);
 }
 .painting-page .view-image img {
   width: 12px;
@@ -155,15 +162,22 @@ nav p {
   font-size: 14px;
   line-height: 28px;
 }
-.painting-page a {
-  text-decoration: underline;
-  text-transform: uppercase;
-  color: #7D7D7D;
-  display: block;
+.painting-page .painting-information .link-container {
+  width: 500px;
+  margin: auto;
   margin-top: 2rem;
   margin-bottom: 5rem;
+}
+.painting-page .painting-information a {
+  text-decoration: underline;
+  text-transform: uppercase;
+  color: black;
   font-size: 10px;
   letter-spacing: 2px;
+  opacity: 0.6;
+}
+.painting-page .painting-information a:hover {
+  opacity: 1;
 }
 .painting-page progress {
   width: 100%;
@@ -176,6 +190,11 @@ nav p {
 }
 .painting-page .arrows img {
   scale: 0.5;
+  cursor: pointer;
+  transition-duration: 0.5s;
+}
+.painting-page .arrows img:hover {
+  opacity: 0.6;
 }
 .painting-page .slideshow-controls p {
   font-size: 0.8rem;
@@ -188,7 +207,15 @@ nav p {
   width: 70px;
 }
 
+.disabled {
+  opacity: 0.3;
+  pointer-events: none;
+}
+
 @media screen and (min-width: 768px) {
+  nav p {
+    font-size: 12px;
+  }
   .painting-page .img-container {
     padding: 0.1rem;
     width: 80%;
