@@ -145,6 +145,9 @@ nav p:hover {
 .painting-page .painting-information img {
   width: 5rem;
 }
+.painting-page .painting-information .artist-portrait {
+  width: 100px;
+}
 .painting-page .painting-information .year {
   font-size: 5.5rem;
   color: #e5e5e5;
@@ -163,7 +166,6 @@ nav p:hover {
   line-height: 28px;
 }
 .painting-page .painting-information .link-container {
-  width: 500px;
   margin: auto;
   margin-top: 2rem;
   margin-bottom: 5rem;
@@ -250,6 +252,51 @@ nav p:hover {
     width: 500px;
     margin-left: auto;
     margin-right: auto;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .gallery,
+  .painting-page,
+  nav {
+    max-width: 1150px;
+    margin: auto;
+  }
+  .painting-page {
+    position: relative;
+  }
+  .painting-page .img-container {
+    padding: 0.1rem;
+    width: 40%;
+    height: 500px;
+    max-width: 800px;
+  }
+  .painting-page .img-info {
+    right: -150px;
+  }
+  .painting-page .painting-information {
+    position: absolute;
+    top: 50px;
+    right: 100px;
+  }
+  .painting-page .painting-information .info-container {
+    position: relative;
+    top: 50px;
+  }
+  .painting-page .painting-information .artist-portrait {
+    top: 340px;
+    left: -150px;
+  }
+  .painting-page .painting-information .year {
+    top: -140px;
+    letter-spacing: 5px;
+    font-weight: bolder;
+  }
+  .painting-page .painting-information .description {
+    border: black;
+    width: 350px;
+  }
+  .painting-page progress {
+    margin-top: 150px;
   }
 }
 

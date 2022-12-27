@@ -49,14 +49,16 @@ export const PaintingInfo = ( {setFocusedPainting,focusedPainting, gallery, play
         </div>
 
             <section className="painting-information">
-                <img 
-                    src={"src/" + focusedPainting.artist.image} 
-                    alt={focusedPainting.artist.name} 
-                    className="artist-portrait" />
-                <p className="year">{focusedPainting.year}</p>
-                <p className="description">{focusedPainting.description}</p>
-                <div className="link-container">
-                 <a href={focusedPainting.source} target="_blank" rel="noreferrer" >go to source</a>
+                <div className="info-container">
+                    <img 
+                        src={"src/" + focusedPainting.artist.image} 
+                        alt={focusedPainting.artist.name} 
+                        className="artist-portrait" />
+                    <p className="year">{focusedPainting.year}</p>
+                    <p className="description">{focusedPainting.description}</p>
+                    <div className="link-container">
+                    <a href={focusedPainting.source} target="_blank" rel="noreferrer" >go to source</a>
+                    </div>
                 </div>
             </section>
 
