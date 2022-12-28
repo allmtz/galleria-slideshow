@@ -183,6 +183,21 @@ nav p:hover {
 }
 .painting-page progress {
   width: 100%;
+  height: 2px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border: none;
+  appearance: none;
+}
+.painting-page progress::-webkit-progress-bar {
+  background-color: rgba(0, 0, 0, 0.116);
+  border-radius: 5px;
+}
+.painting-page progress::-webkit-progress-value {
+  background-color: black;
+}
+.painting-page progress::-moz-progress-bar {
+  background-color: black;
 }
 .painting-page .slideshow-controls,
 .painting-page .arrows {
