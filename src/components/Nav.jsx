@@ -19,7 +19,14 @@ export const Nav = ( {focusedPainting, play, setPlay}  ) => {
       setPlay(true)
 
       //chooses at which painting to start the slideshow based on the current route
-      let i = location.pathname === "/" ? 0 : gallery.indexOf(focusedPainting)
+      //resets the slideshow if on the last painting
+      let i = 
+        location.pathname === "/" 
+          ? 0 
+          : gallery.indexOf(focusedPainting) === gallery.length - 1 
+          ? 0
+          : gallery.indexOf(focusedPainting)
+
       
       // prevent navigating to the same painting twice if starting the slideshow from a specific painting
       i === 0 ? navigate( `/${gallery[i].name}` ) : ""
