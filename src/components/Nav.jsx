@@ -38,7 +38,7 @@ export const Nav = ( {focusedPainting, play, setPlay}  ) => {
           return
         }
         stopSlideshow()
-      },500 )
+      },6000 )
       return
     }
     // stopping the slideshow before it reaches the last painting
