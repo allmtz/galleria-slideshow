@@ -12,7 +12,9 @@ export const GalleryCard = ({ painting, setFocusedPainting }) => {
       onClick={ () => setFocusedPainting(painting) }
     >
       <div className="gradient"></div>
-      <img src={"src/" + painting.images.thumbnail} alt={painting.name} />
+      {/* <img src={"src/" + painting.images.thumbnail} alt={painting.name} /> */}
+      <img src={painting.images.thumbnail} alt={painting.name} />
+     
       <div className="painting-info">
         <h2>{painting.name}</h2>
         <p>{painting.artist.name}</p>
