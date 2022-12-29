@@ -29,7 +29,9 @@ export const PaintingInfo = ( {setFocusedPainting,focusedPainting, gallery, play
     <div className="full-screen">
         <div>
             <p onClick={closeFullScreen}>close</p>
-            <img src={ "src/" + focusedPainting.images.hero.small} alt={focusedPainting.name} />
+            {/* <img src={ "src/" + focusedPainting.images.hero.small} alt={focusedPainting.name} /> */}
+            <img src={focusedPainting.images.hero.small} alt={focusedPainting.name} />
+            
         </div>
     </div>
     <div className="painting-page">
@@ -37,11 +39,15 @@ export const PaintingInfo = ( {setFocusedPainting,focusedPainting, gallery, play
         <div className="img-container">
 
             <div className="view-image" onClick={openFullScreen}>
-                <img  src={ "src/assets/shared/icon-view-image.svg"} alt="" />
+                {/* <img  src={ "src/assets/shared/icon-view-image.svg"} alt="" /> */}
+                <img  src={ "/assets/shared/icon-view-image.svg"} alt="" />
+                
                 <p>view image</p>
             </div>
 
-            <img src={ "src/" + focusedPainting.images.hero.small} alt={focusedPainting.name} />
+            {/* <img src={ "src/" + focusedPainting.images.hero.small} alt={focusedPainting.name} /> */}
+            <img src={focusedPainting.images.hero.small} alt={focusedPainting.name} />
+            
             <div className="img-info">
                 <h2>{focusedPainting.name}</h2>
                 <p>{focusedPainting.artist.name}</p>
@@ -51,7 +57,9 @@ export const PaintingInfo = ( {setFocusedPainting,focusedPainting, gallery, play
             <section className="painting-information">
                 <div className="info-container">
                     <img 
-                        src={"src/" + focusedPainting.artist.image} 
+                        // src={"src/" + focusedPainting.artist.image} 
+                        src={focusedPainting.artist.image} 
+
                         alt={focusedPainting.artist.name} 
                         className="artist-portrait" />
                     <p className="year">{focusedPainting.year}</p>
@@ -70,8 +78,10 @@ export const PaintingInfo = ( {setFocusedPainting,focusedPainting, gallery, play
                 <p>{focusedPainting.artist.name}</p>
             </div>
             <div className="arrows" >
-                <img className={play ? "disabled" : ""} src={"src/assets/shared/icon-back-button.svg"} alt="back arrow" onClick={ () => manuallyChangeSlide("back")}  />
-                <img className={play ? "disabled" : ""} src={"src/assets/shared/icon-next-button.svg"} alt="forward arrow" onClick={() => manuallyChangeSlide("forward")}/>
+                {/* <img className={play ? "disabled" : ""} src={"src/assets/shared/icon-back-button.svg"} alt="back arrow" onClick={ () => manuallyChangeSlide("back")}  />
+                <img className={play ? "disabled" : ""} src={"src/assets/shared/icon-next-button.svg"} alt="forward arrow" onClick={() => manuallyChangeSlide("forward")}/> */}
+                <img className={play ? "disabled" : ""} src={"./assets/shared/icon-back-button.svg"} alt="back arrow" onClick={ () => manuallyChangeSlide("back")}  />
+                <img className={play ? "disabled" : ""} src={"./assets/shared/icon-next-button.svg"} alt="forward arrow" onClick={() => manuallyChangeSlide("forward")}/>
             </div>
         </section>
     </div> 
