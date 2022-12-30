@@ -5,7 +5,7 @@ import { removeFade } from "../App"
 export const GalleryCard = ({ painting, setFocusedPainting }) => {
   return (
     <Link
-      to={`/${painting.name}`}
+      to={`/${encodeURI(painting.name)}`}
       className="gallery-card"
       onMouseEnter={fadeCard}
       onMouseLeave={removeFade}

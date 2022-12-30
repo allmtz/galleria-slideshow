@@ -37,12 +37,12 @@ function App() {
   return (
     <div className="container">
      <Nav focusedPainting={focusedPainting} play={play} setPlay={setPlay}  />
-      
-      <Routes>
-        <Route  path="/" element={<Home gallery={gallery} setFocusedPainting={setFocusedPainting} />}  />
-        <Route  path="/:paintingName" element={<PaintingInfo focusedPainting={focusedPainting} setFocusedPainting={setFocusedPainting} gallery={gallery} play={play} />}  />
-      </Routes>
-
+      <main>
+        <Routes>
+          <Route  path="/" element={<Home gallery={gallery} setFocusedPainting={setFocusedPainting} />}  />
+          <Route  path="/:paintingName" element={<PaintingInfo focusedPainting={focusedPainting} setFocusedPainting={setFocusedPainting} gallery={gallery} play={play} />}  />
+        </Routes>
+      </main>
     </div>
   );
 }
